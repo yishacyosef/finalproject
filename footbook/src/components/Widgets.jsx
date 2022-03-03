@@ -9,7 +9,7 @@ function widgets() {
         width='340'
         height= '100%'
         style={{ border: 'none', overflow: 'hidden'}}
-        scrolling = 'no'
+        scrolling = 'yes'
         allowTransparency = 'true'
         allow='encrypted-media'
         >

@@ -8,19 +8,19 @@ import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 const provider = new GoogleAuthProvider();
 function Login () {
-  // const [state, dispatch] = useStateValue();
-  //   const signIn =() => {
+  const [state, dispatch] = useStateValue();
+    // const signIn =() => {
       signInWithPopup(auth, provider)
         .then((result) => {
-          // dispatch({
-          // type: actionTypes.SET_USER,
-          // user: result.user,
-          // });
+          dispatch({
+          type: actionTypes.SET_USER,
+          user: result.user,
+          });
           // This gives you a Google Access Token. You can use it to access the Google API.
-          const credential = GoogleAuthProvider.credentialFromResult(result);
-          const token = credential.accessToken;
-          // The signed-in user info.
-          const user = result.user;
+          // const credential = GoogleAuthProvider.credentialFromResult(result);
+          // const token = credential.accessToken;
+          // // The signed-in user info.
+          // const user = result.user;
           // ...
         }).catch((error) => {
           // Handle Errors here.
@@ -32,33 +32,21 @@ function Login () {
           const credential = GoogleAuthProvider.credentialFromError(error);
           // ...
         })
-      // }
+      
     
-  // 
-
-  //  
-  //      auth.signInWithPopup()
-  //       .then(result =>{
-  //         dispatch({
-  //           type: actionTypes.SET_USER,
-  //           user: result.user,
-  //         });
-  //       })
-  //       .catch((error) => alert(error.message));
-  //   };   
     return (
       <div className='login'> 
           <div className="login__logo">
               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/900px-Facebook_f_logo_%282019%29.svg.png?20200820101156" alt="Facebook logo" />
               <img src="https://www.logo.wine/a/logo/Facebook/Facebook-Logo.wine.svg" alt="Facebook logo" />
               </div>
-          <Button type='submit' onClick={Login}>
+          <Button type='submit' onClick={signInWithPopup}>
               Sign In
           </Button> 
 
       </div>
     );
-  }
+  // }
+}
 // }
-  
 export default Login
