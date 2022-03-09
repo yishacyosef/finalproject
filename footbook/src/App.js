@@ -3,7 +3,6 @@ import './App.css';
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Feed from "./components/Feed"
-import Widgets from "./components/Widgets";
 import Login from "./components/Login";
 import { useStateValue } from './StateProvider';
 //BEM naming convention
@@ -21,7 +20,6 @@ function App() {
         <div className="app__body">  
           
           <Feed />
-          <Widgets />
         </div>
       
       </>
